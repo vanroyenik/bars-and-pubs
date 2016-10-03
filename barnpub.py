@@ -70,19 +70,20 @@ def nearest_bar(hyp_table):
 	c=min(hyp_table, key=lambda i: hyp_table[i])
 	return c
 
-adress=input("Write the adress to \"bars.json\" file: ")   
-table=load_json_data(str(adress))
-print ("\n")
-res=bar_protocol(cells_dict(table))
-print ("The largest bas is: %s" % maximal(res))
-print ("The smallest bar is: %s" % minimal(res))
-print ("\n")
-my_x=input("Give me your Longitude: ")
-my_y=input("Give me your Latitude: ")
-print ("\n")
-bars_pos=all_bars_position(res1)
-vectors=vector_to_me(bars_pos, float(my_x), float(my_y))
-print("The nearest bar to you is: %s" % nearest_bar(vectors))
+if __name__ == '__main__':
+	adress=input("Write the adress to \"bars.json\" file: ")   
+	table=load_json_data(str(adress))
+	print ("\n")
+	res=bar_protocol(cells_dict(table))
+	print ("The largest bas is: %s" % maximal(res))
+	print ("The smallest bar is: %s" % minimal(res))
+	print ("\n")
+	my_x=input("Give me your Longitude: ")
+	my_y=input("Give me your Latitude: ")
+	print ("\n")
+	bars_pos=all_bars_position(res1)
+	vectors=vector_to_me(bars_pos, float(my_x), float(my_y))
+	print("The nearest bar to you is: %s" % nearest_bar(vectors))
 
 
 
